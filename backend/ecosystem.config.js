@@ -1,13 +1,12 @@
 require('dotenv').config();
 
-const { PORT, JWT_SECRET, DB_HOST, DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF } = process.env;
-console.log('123', DEPLOY_HOST);
+const { DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF } = process.env;
 
 module.exports = {
   apps: [{
     name: 'mesto-project',
     script: "dist/app.js",
-    autorestart: true
+    autorestart: true,
   }],
   deploy: {
     production: {
